@@ -24,9 +24,10 @@ git add -A
 git commit -m "commit inicial"
 ```
 
-##### abri repositório no github, cliquei em code e dps em SSH
-##### copiei oq apareceu lá git@github.com:czndy/quadro_anuncios_web.git
-##### voltei pro cmd e dei o seguinte comando
+Abri o repositório no github, cliquei em code e dps em SSH
+Copiei oq apareceu lá git@github.com:czndy/quadro_anuncios_web.git
+Voltei pro cmd e dei o seguinte comando
+
 ```
 git remote add origin git@github.com:czndy/quadro_anuncios_web.git
 
