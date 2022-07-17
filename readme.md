@@ -1,4 +1,4 @@
-Passo a passo para criar git: 
+#Passo a passo para criar git: 
 download do git
 criei repositório no github
 abri repositório, cliquei em code e dps em SSH
@@ -9,6 +9,7 @@ obs: eu coloquei o mesmo nome de usuário do meu github no user.name e o mesmo e
 
 ##CMD:
 
+```
 git config --global user.name "Your name here"
 git config --global user.email "your_email@example.com"
 
@@ -19,13 +20,14 @@ git init
 git add -A
 
 git commit -m "commit inicial"
+```
 
-
-abri repositório no github, cliquei em code e dps em SSH
-copiei oq apareceu lá git@github.com:czndy/quadro_anuncios_web.git
-voltei pro cmd e dei o seguinte comando
-
+#####abri repositório no github, cliquei em code e dps em SSH
+#####copiei oq apareceu lá git@github.com:czndy/quadro_anuncios_web.git
+#####voltei pro cmd e dei o seguinte comando
+```
 git remote add origin git@github.com:czndy/quadro_anuncios_web.git
 
 git push -u -f origin master
+```
 observação: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
