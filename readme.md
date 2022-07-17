@@ -1,4 +1,4 @@
-passo a passo para criar git: 
+Passo a passo para criar git: 
 download do git
 criei repositório no github
 abri repositório, cliquei em code e dps em SSH
@@ -30,4 +30,3 @@ git remote add origin git@github.com:czndy/quadro_anuncios_web.git
 git push -u -f origin master
 observação: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
-testeee
