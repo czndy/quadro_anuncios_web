@@ -13,8 +13,10 @@ obs: eu coloquei o mesmo nome de usuário do meu github no user.name e o mesmo e
 git config --global user.name "Your name here"
 git config --global user.email "your_email@example.com"
 
-cd D:\TI\Projetos pessoais\quadro_anuncios_web (vcs colocam a url de onde vcs vão deixar o projeto no pc de vcs)
-
+cd D:\TI\Projetos pessoais\quadro_anuncios_web
+```
+#####(vcs colocam a url de onde vcs vão deixar o projeto no pc de vcs)
+```
 git init
 
 git add -A
