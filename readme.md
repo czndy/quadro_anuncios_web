@@ -37,3 +37,6 @@ observação: -u seta a origem configurada lá em cima como padrão. -f signific
 
 primeiro commit do ulynho 
 primeiro commit bielxd/ackhilles
+
+
+Guilhermeeeeeeee distraído esqueceu de puxar antes de começar a mexer no código
