@@ -35,4 +35,5 @@ git push -u -f origin master
 ```
 observação: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
-primeiro coment do ulynho 
+primeiro commit do ulynho 
+primeiro commit bielxd/ackhilles
