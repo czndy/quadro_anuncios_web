@@ -39,10 +39,4 @@ git push -u -f origin master
 
 observação: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
-primeiro commit do ulynho
-
-primeiro commit bielxd/ackhilles
-
-primeiro commit bruno_costa
-
-Guilhermeeeeeeee distraído esqueceu de puxar antes de começar a mexer no código
+SEMPRE DAR PUSH NO GIT ANTES DE MEXER NO CÓDIGO
