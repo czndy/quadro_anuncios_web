@@ -1,4 +1,5 @@
-# Passo a passo para criar git: 
+# Passo a passo para criar git:
+
 download do git
 criei repositório no github
 abri repositório, cliquei em code e dps em SSH
@@ -15,7 +16,9 @@ git config --global user.email "your_email@example.com"
 
 cd D:\TI\Projetos pessoais\quadro_anuncios_web
 ```
+
 ##### (vcs colocam a url de onde vcs vão deixar o projeto no pc de vcs)
+
 ```
 git init
 
@@ -33,10 +36,19 @@ git remote add origin git@github.com:czndy/quadro_anuncios_web.git
 
 git push -u -f origin master
 ```
+
 observação: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
+<<<<<<< HEAD
 primeiro commit do ulynho 
 primeiro commit bielxd/ackhilles
 
 
 Guilhermeeeeeeee distraído esqueceu de puxar antes de começar a mexer no código
+=======
+primeiro commit do ulynho
+
+primeiro commit bielxd/ackhilles
+
+primeiro commit bruno_costa
+>>>>>>> a8511a12b77f04312fa5381e0597220103d97764
