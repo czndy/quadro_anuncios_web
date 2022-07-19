@@ -37,8 +37,6 @@ git push -u -f origin master
 ```
 OBS: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
-SEMPRE DAR PUSH NO GIT ANTES DE MEXER NO CÓDIGO
-
 # Exemplo de como trabalhar com GIT:
 ## Antes de começar a mexer no código:
 ```
