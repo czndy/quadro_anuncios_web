@@ -30,8 +30,9 @@ Agora vá até o projeto no GitHub que deseja e copie a URL dele.
 No caso, é a seguinte URL: https://github.com/czndy/quadro_anuncios_web
 Volte ao PowerShell (ou CMD) e dê o seguinte comando:
 ```
-git remote add origin git@github.com:czndy/quadro_anuncios_web.git
+git remote add origin https://github.com/czndy/quadro_anuncios_web
 git branch -M 'master'
+git pull https://github.com/czndy/quadro_anuncios_web master
 git push -u -f origin master
 ```
 OBS: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
