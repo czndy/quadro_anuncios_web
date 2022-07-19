@@ -1,9 +1,9 @@
 # Passo a passo para configurar git:
 
 ## Requerimentos:
-Download do Node.js (versão LTS): https://nodejs.org/en/download/
-Download do git: https://git-scm.com/downloads
-Download do cli (gh): https://cli.github.com/
+- Download do Node.js (versão LTS): https://nodejs.org/en/download/
+- Download do git: https://git-scm.com/downloads
+- Download do cli (gh): https://cli.github.com/
 
 
 ## CMD:
