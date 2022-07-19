@@ -38,3 +38,28 @@ git push -u -f origin master
 OBS: -u seta a origem configurada lá em cima como padrão. -f significa force, nesse primeiro commit usei pra sobrescrever o readme.me que já tinha no github
 
 SEMPRE DAR PUSH NO GIT ANTES DE MEXER NO CÓDIGO
+
+# Exemplo de como trabalhar com GIT:
+## Antes de começar a mexer no código:
+```
+git fetch
+git pull
+git status
+```
+Se o resultado for o seguinte, você pode começar a trabalhar no código:
+```
+On branch master
+Your branch is up to date with 'origin/master'.
+nothing to commit, working tree clean
+```
+
+## Depois de terminar de mexer no projeto:
+Verifique se os arquivos que vc modificou estão corretos
+```
+git status
+```
+Dê o commit com a descrição e em seguida dê o push para enviar as alterações pro git.
+```
+git commit -a -m "Coloque aqui a descrição do que vc mexeu no projeto - entre aspas duplas"
+git push
+```
