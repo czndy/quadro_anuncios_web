@@ -10,7 +10,9 @@
 
 - OBS 1: Coloque o mesmo nome de usuário do seu github no user.name e o mesmo email do seu github no user.email dos primeiros dois comandos
 - OBS 2: no terceiro comando abaixo, escolha as seguintes opções: Github.com > HTTPS > (digite y e dê enter) > Login with a web browser > (dê enter)
+
 Copie o código que apareceu no CMD ao lado de "First copy your one-time code:" e cole na janela que abriu do github.
+
 Clique em Continuar, depois em Autorizar Github - e vc já estará autenticado. 
 ```
 git config --global user.name "Your name here"
@@ -20,14 +22,18 @@ gh auth login
 
 
 Após isso, abra a pasta onde vc guardará o projeto, segure SHIFT e clique com o botão direito em uma parte vazia dentro da pasta.
+
 Selecione "Abrir janela do PowerShell aqui" (ou CMD) 
-DIgite o seguinte comando:
+
+Digite o seguinte comando:
 ```
 git init
 ```
 
 Agora vá até o projeto no GitHub que deseja e copie a URL dele.
+
 No caso, é a seguinte URL: https://github.com/czndy/quadro_anuncios_web
+
 Volte ao PowerShell (ou CMD) e dê o seguinte comando:
 ```
 git remote add origin https://github.com/czndy/quadro_anuncios_web
