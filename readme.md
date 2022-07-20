@@ -5,7 +5,6 @@
 - Download do git: https://git-scm.com/downloads
 - Download do cli (gh): https://cli.github.com/
 
-
 ## CMD:
 
 - OBS 1: Coloque o mesmo nome de usuário do seu github no user.name e o mesmo email do seu github no user.email dos primeiros dois comandos
@@ -67,3 +66,5 @@ Dê o commit com a descrição e em seguida dê o push para enviar as alteraçõ
 git commit -a -m "Coloque aqui a descrição do que vc mexeu no projeto - entre aspas duplas"
 git push
 ```
+
+Alternativa visual para GIT: https://sourcetreeapp.com/
