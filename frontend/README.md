@@ -73,6 +73,17 @@ Alternativa visual para GIT: https://sourcetreeapp.com/
 
 
 
+Partes - Apostila PDF travado
+Mecanicas - Partes mecanicas da reuniao durante semana e FDS
+Login - login
+Discursos - folha de discursos de final de semana (presidente e tema da Sentinela)
+Dashboard - página inicial com menus
+CadastroPartes - tela para dar carga no PDF de determinado mes
+Cadastro - cadastro de irmãos
+
+
+
+
 
 # Getting Started with Create React App
 
