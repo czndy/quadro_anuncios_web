@@ -19,136 +19,40 @@ import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 
 import * as React from "react";
 import {useNavigate} from "react-router-dom";
+import Menu from "../Menu/menu";
 
-const drawerWidth = 240;
-
-export default function Dashboard() {
-  let navigate = useNavigate();
-
+export default function Dashboard({menu}) {
   return (
-    <Box sx={{display: "flex"}}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Dashboard
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <Box sx={{display: "flex", height: "100vh"}}>
+      {menu}
 
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {width: drawerWidth, boxSizing: "border-box"},
-        }}
-      >
-        <Toolbar />
-        <Box sx={{overflow: "auto"}}>
-          <List>
-            <ListItem
-              key={"acc"}
-              disablePadding
-              onClick={() => {
-                navigate("/partes");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <DescriptionTwoToneIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Partes"} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem
-              key={"abb"}
-              disablePadding
-              onClick={() => {
-                navigate("/mecanicas");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <SettingsTwoToneIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Mecânicas"} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem
-              key={"aaa"}
-              disablePadding
-              onClick={() => {
-                navigate("/discursos");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <CommentTwoToneIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Discursos"} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-
-          <Divider />
-
-          <List>
-            <ListItem
-              key={"add"}
-              disablePadding
-              onClick={() => {
-                navigate("/cadastro");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <PersonAddTwoToneIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Cadastro"} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem
-              key={"aee"}
-              disablePadding
-              onClick={() => {
-                navigate("/cadastro-partes");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <NoteAddTwoToneIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Cadastro Partes"} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
       <Box component="main" sx={{flexGrow: 1, p: 3}}>
         <Toolbar />
-        <Typography paragraph>
-          Partes - Apostila em PDF (Apenas visualização)
+
+        <Typography variant="h4">Partes</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Apostila em PDF (Apenas visualização)
         </Typography>
-        <Typography paragraph>
-          Mecânicas - Partes mecânicas da reunião Durante semana e FDS
-          (Editável)
+
+        <Typography variant="h4">Mecânicas</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Partes mecânicas da reunião Durante semana e FDS (Editável)
         </Typography>
-        <Typography paragraph>
-          Discursos - Folha de discursos de FDS (Presidente, Tema do Discurso,
-          Tema da Sentinela, etc) (Editável)
+
+        <Typography variant="h4">Discursos</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Folha de discursos de FDS (Presidente, Tema do Discurso, Tema da
+          Sentinela, etc) (Editável)
         </Typography>
-        <Typography paragraph>
-          CadastroPartes - Tela para dar carga no PDF do mês determinado
+
+        <Typography variant="h4">Cadastro Partes</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Tela para dar carga no PDF do mês determinado
         </Typography>
-        <Typography paragraph>
-          Cadastro - Cadastro de irmãos para utilização nos campos de edição
+
+        <Typography variant="h4">Cadastro</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Cadastro de irmãos para utilização nos campos de edição
         </Typography>
       </Box>
     </Box>
