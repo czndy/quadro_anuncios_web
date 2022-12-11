@@ -1,5 +1,8 @@
-export default function Cadastro(){
+export default function Cadastro({menu}){
     return(
-        <h2>CADASTRO</h2>
+        <>
+            {menu}
+            <h2>CADASTRO</h2>
+        </>
     )
 }
