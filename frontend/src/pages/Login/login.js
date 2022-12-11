@@ -27,7 +27,7 @@ export default function Login(){
 
     const handleLogin = (event) => {
         if(whitelist[username.toLowerCase()] === password){
-            navigate("/dashboard");
+            navigate("/dashboard")
         }else{
             alert("Senha errada!")
         }
