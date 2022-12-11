@@ -12,6 +12,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
+import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
 import CommentTwoToneIcon from "@mui/icons-material/CommentTwoTone";
 import DescriptionTwoToneIcon from "@mui/icons-material/DescriptionTwoTone";
 import NoteAddTwoToneIcon from "@mui/icons-material/NoteAddTwoTone";
@@ -22,7 +23,7 @@ import {useNavigate} from "react-router-dom";
 
 const drawerWidth = 240;
 
-export default function Menu() {
+export default function Menu({name}) {
   let navigate = useNavigate();
 
   return (
@@ -30,11 +31,43 @@ export default function Menu() {
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          backgroundColor: "#5b3c88",
+        }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Dashboard
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            {name}
+            {name !== "Dashboard" ? (
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "20px",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  navigate("/dashboard");
+                }}
+              >
+                <ArrowBackTwoToneIcon />
+                Voltar para Dashboard
+              </Box>
+            ) : (
+              ""
+            )}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -59,7 +92,7 @@ export default function Menu() {
             >
               <ListItemButton>
                 <ListItemIcon>
-                  <DescriptionTwoToneIcon />
+                  <DescriptionTwoToneIcon style={{color: "#5b3c88"}} />
                 </ListItemIcon>
                 <ListItemText primary={"Partes"} />
               </ListItemButton>
@@ -74,7 +107,7 @@ export default function Menu() {
             >
               <ListItemButton>
                 <ListItemIcon>
-                  <SettingsTwoToneIcon />
+                  <SettingsTwoToneIcon style={{color: "#5b3c88"}} />
                 </ListItemIcon>
                 <ListItemText primary={"Mecânicas"} />
               </ListItemButton>
@@ -89,7 +122,7 @@ export default function Menu() {
             >
               <ListItemButton>
                 <ListItemIcon>
-                  <CommentTwoToneIcon />
+                  <CommentTwoToneIcon style={{color: "#5b3c88"}} />
                 </ListItemIcon>
                 <ListItemText primary={"Discursos"} />
               </ListItemButton>
@@ -108,7 +141,7 @@ export default function Menu() {
             >
               <ListItemButton>
                 <ListItemIcon>
-                  <PersonAddTwoToneIcon />
+                  <PersonAddTwoToneIcon style={{color: "#5b3c88"}} />
                 </ListItemIcon>
                 <ListItemText primary={"Cadastro"} />
               </ListItemButton>
@@ -123,7 +156,7 @@ export default function Menu() {
             >
               <ListItemButton>
                 <ListItemIcon>
-                  <NoteAddTwoToneIcon />
+                  <NoteAddTwoToneIcon style={{color: "#5b3c88"}} />
                 </ListItemIcon>
                 <ListItemText primary={"Cadastro Partes"} />
               </ListItemButton>
@@ -131,6 +164,38 @@ export default function Menu() {
           </List>
         </Box>
       </Drawer>
+
+      <Box component="main" sx={{flexGrow: 1, p: 3}}>
+        <Toolbar />
+
+        <Typography Typography variant="h4">
+          Partes
+        </Typography>
+        <Typography variant="subtitle1" paragraph>
+          Apostila em PDF (Apenas visualização)
+        </Typography>
+
+        <Typography variant="h4">Mecânicas</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Partes mecânicas da reunião Durante semana e FDS (Editável)
+        </Typography>
+
+        <Typography variant="h4">Discursos</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Folha de discursos de FDS (Presidente, Tema do Discurso, Tema da
+          Sentinela, etc) (Editável)
+        </Typography>
+
+        <Typography variant="h4">Cadastro Partes</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Tela para dar carga no PDF do mês determinado
+        </Typography>
+
+        <Typography variant="h4">Cadastro</Typography>
+        <Typography variant="subtitle1" paragraph>
+          Cadastro de irmãos para utilização nos campos de edição
+        </Typography>
+      </Box>
     </>
   );
 }

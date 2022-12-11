@@ -16,12 +16,30 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard menu={<Menu />} />} />
-        <Route path="/mecanicas" element={<Mecanicas />} />
-        <Route path="/discursos" element={<Discursos />} />
-        <Route path="/cadastro" element={<Cadastro menu={<Menu />} />} />
-        <Route path="/partes" element={<Partes />} />
-        <Route path="/cadastro-partes" element={<CadastroPartes />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard menu={<Menu name="Dashboard" />} />}
+        />
+        <Route
+          path="/mecanicas"
+          element={<Mecanicas menu={<Menu name="Mecânicas" />} />}
+        />
+        <Route
+          path="/discursos"
+          element={<Discursos menu={<Menu name="Discursos" />} />}
+        />
+        <Route
+          path="/cadastro"
+          element={<Cadastro menu={<Menu name="Cadastro" />} />}
+        />
+        <Route
+          path="/partes"
+          element={<Partes menu={<Menu name="Partes" />} />}
+        />
+        <Route
+          path="/cadastro-partes"
+          element={<CadastroPartes menu={<Menu name="Cadastro Partes" />} />}
+        />
         <Route path="/teste" element={<Teste />} />
       </Routes>
     </BrowserRouter>

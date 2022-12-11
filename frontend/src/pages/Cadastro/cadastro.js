@@ -1,8 +1,6 @@
+import Box from "@mui/material/Box";
+import * as React from "react";
+
 export default function Cadastro({menu}) {
-  return (
-    <>
-      {menu}
-      <h2>CADASTRO</h2>
-    </>
-  );
+  return <Box sx={{display: "flex", height: "100vh"}}>{menu}</Box>;
 }

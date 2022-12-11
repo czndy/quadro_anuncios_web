@@ -1,5 +1,6 @@
-export default function Partes(){
-    return (
-        <h2>PARTES</h2>
-    )
+import Box from "@mui/material/Box";
+import * as React from "react";
+
+export default function Partes({menu}) {
+  return <Box sx={{display: "flex", height: "100vh"}}>{menu}</Box>;
 }

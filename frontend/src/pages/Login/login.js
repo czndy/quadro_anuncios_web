@@ -1,5 +1,6 @@
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import React, {useState} from "react";
@@ -79,7 +80,14 @@ export default function Login() {
           autoComplete="off"
           marginBottom="10px"
         >
-          <div>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <TextField
               id="password"
               label="Password"
@@ -92,18 +100,26 @@ export default function Login() {
                 handleKeyPress(e);
               }}
             />
-          </div>
+
+            <Link
+              href="https://www.google.com"
+              underline="hover"
+              sx={{
+                width: "100%",
+                display: "flex",
+                color: "#5b3c88",
+                justifyContent: "flex-start",
+                marginTop: "10px",
+                fontFamily: "sans-serif",
+              }}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Esqueceu a senha?
+            </Link>
+          </Box>
         </Box>
-        <a
-          href="https://www.google.com"
-          target="_blank"
-          display="flex"
-          sx={{flexDirection: "column", alignItems: "center"}}
-          style={{marginLeft: "300px"}}
-          rel="noreferrer"
-        >
-          Esqueci minha senha
-        </a>
+
         <Box
           m="auto"
           mt="80px"
@@ -112,11 +128,18 @@ export default function Login() {
           alignItems="center"
           autoComplete="off"
         >
-          <div>
+          <Box>
             <LoadingButton
               loading={false}
               variant="contained"
-              sx={{width: "400px", height: "59px"}}
+              sx={{
+                width: "400px",
+                height: "59px",
+                backgroundColor: "#5b3c88",
+                "&:hover": {
+                  backgroundColor: "#6b46a1",
+                },
+              }}
               onClick={() => {
                 handleLogin();
               }}
@@ -124,7 +147,7 @@ export default function Login() {
             >
               Entrar
             </LoadingButton>
-          </div>
+          </Box>
         </Box>
       </Paper>
     </Box>
