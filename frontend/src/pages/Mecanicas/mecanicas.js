@@ -1,5 +1,5 @@
 export default function Mecanicas(){
     return(
-        <h2>TESTE</h2>
+        <h2>MECANICAS</h2>
     )
 }
