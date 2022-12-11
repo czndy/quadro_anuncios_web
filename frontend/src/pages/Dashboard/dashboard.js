@@ -1,5 +1,3 @@
-import MailIcon from "@mui/icons-material/Mail";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,10 +18,13 @@ import PersonAddTwoToneIcon from "@mui/icons-material/PersonAddTwoTone";
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 
 import * as React from "react";
+import {useNavigate} from "react-router-dom";
 
 const drawerWidth = 240;
 
 export default function Dashboard() {
+  let navigate = useNavigate();
+
   return (
     <Box sx={{display: "flex"}}>
       <CssBaseline />
@@ -49,7 +50,13 @@ export default function Dashboard() {
         <Toolbar />
         <Box sx={{overflow: "auto"}}>
           <List>
-            <ListItem key={"acc"} disablePadding>
+            <ListItem
+              key={"acc"}
+              disablePadding
+              onClick={() => {
+                navigate("/partes");
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <DescriptionTwoToneIcon />
@@ -58,7 +65,13 @@ export default function Dashboard() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"abb"} disablePadding>
+            <ListItem
+              key={"abb"}
+              disablePadding
+              onClick={() => {
+                navigate("/mecanicas");
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <SettingsTwoToneIcon />
@@ -67,7 +80,13 @@ export default function Dashboard() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"aaa"} disablePadding>
+            <ListItem
+              key={"aaa"}
+              disablePadding
+              onClick={() => {
+                navigate("/discursos");
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <CommentTwoToneIcon />
@@ -80,7 +99,13 @@ export default function Dashboard() {
           <Divider />
 
           <List>
-            <ListItem key={"add"} disablePadding>
+            <ListItem
+              key={"add"}
+              disablePadding
+              onClick={() => {
+                navigate("/cadastro");
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <PersonAddTwoToneIcon />
@@ -89,7 +114,13 @@ export default function Dashboard() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"aee"} disablePadding>
+            <ListItem
+              key={"aee"}
+              disablePadding
+              onClick={() => {
+                navigate("/cadastro-partes");
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <NoteAddTwoToneIcon />
@@ -103,33 +134,21 @@ export default function Dashboard() {
       <Box component="main" sx={{flexGrow: 1, p: 3}}>
         <Toolbar />
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
+          Partes - Apostila em PDF (Apenas visualização)
         </Typography>
         <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
+          Mecânicas - Partes mecânicas da reunião Durante semana e FDS
+          (Editável)
+        </Typography>
+        <Typography paragraph>
+          Discursos - Folha de discursos de FDS (Presidente, Tema do Discurso,
+          Tema da Sentinela, etc) (Editável)
+        </Typography>
+        <Typography paragraph>
+          CadastroPartes - Tela para dar carga no PDF do mês determinado
+        </Typography>
+        <Typography paragraph>
+          Cadastro - Cadastro de irmãos para utilização nos campos de edição
         </Typography>
       </Box>
     </Box>
