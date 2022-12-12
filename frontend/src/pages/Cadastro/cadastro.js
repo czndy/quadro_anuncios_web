@@ -4,18 +4,20 @@ import Paper from "@mui/material/Paper";
 import "../Login/login.css";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 
 export default function Cadastro({menu}) {
+
+    const handleAddNew = (event) => {
+        return (alert("testes"))
+    }
+
+
     return (
         <Box sx={{display: "flex", height: "100vh"}}>
             {menu}
@@ -51,7 +53,7 @@ export default function Cadastro({menu}) {
                         </ListItem>
                         
                     </List>
-                    <Button style={{width:'31.25vw'}} sx={{backgroundColor:"#e0e0e0",color: "#5b3c88", "&:hover": { backgroundColor: "#6b46a1", color: "white"}}}>
+                    <Button style={{width:'31.25vw'}} sx={{backgroundColor:"#e0e0e0",color: "#5b3c88", "&:hover": { backgroundColor: "#6b46a1", color: "white"}}} onClick={(e)=>{handleAddNew(e)}}>
                         <AddIcon/>
                     </Button>
                 </Paper>
