@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Cadastro from "./pages/Cadastro/cadastro";
 import CadastroPartes from "./pages/CadastroPartes/cadastroPartes";
 import Dashboard from "./pages/Dashboard/dashboard";
+import DashText from "./pages/Dashboard/dashText";
 import Discursos from "./pages/Discursos/discursos";
 import Login from "./pages/Login/login";
 import Mecanicas from "./pages/Mecanicas/mecanicas";
@@ -18,7 +19,7 @@ export default function Router() {
         <Route path="/" element={<Login />} />
         <Route
           path="/dashboard"
-          element={<Dashboard menu={<Menu name="Dashboard" />} />}
+          element={<Dashboard menu={<Menu name="Dashboard" content={<DashText/>} />} />}
         />
         <Route
           path="/mecanicas"
