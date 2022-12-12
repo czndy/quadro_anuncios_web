@@ -51,7 +51,7 @@ export default function Cadastro({menu}) {
                         </ListItem>
                         
                     </List>
-                    <Button style={{width:'31.2vw'}} sx={{color: "#5b3c88", "&:hover": { backgroundColor: "#6b46a1", color: "white"}}}>
+                    <Button style={{width:'31.25vw'}} sx={{backgroundColor:"#e0e0e0",color: "#5b3c88", "&:hover": { backgroundColor: "#6b46a1", color: "white"}}}>
                         <AddIcon/>
                     </Button>
                 </Paper>
