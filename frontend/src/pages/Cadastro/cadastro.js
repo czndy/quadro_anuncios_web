@@ -14,9 +14,19 @@ import EditIcon from '@mui/icons-material/Edit';
 export default function Cadastro({menu}) {
 
     const handleAddNew = (event) => {
-        return (alert("testes"))
+        console.log("%cAddNew", "color:white;background-color:green", event);
+        //return (alert("Add New"));
     }
 
+    const handleEdit = (event) => {
+        console.log("%cEdit", "color:black;background-color:yellow", event)
+        //return (alert("Edit"));
+    }
+
+    const handleDelete = (event) => {
+        console.log("%cDelete", "color:white;background-color:red", event)
+        //return (alert("Delete"))
+    }
 
     return (
         <Box sx={{display: "flex", height: "100vh"}}>
@@ -39,16 +49,17 @@ export default function Cadastro({menu}) {
                     <List dense={true}>
                         
                         <ListItem secondaryAction={[
-                            <IconButton>
+                            <IconButton onClick={(event)=>{handleEdit(event)}} key={"edit"}>
                                 <EditIcon/>
                             </IconButton>,
-                            <IconButton edge="end" aria-label="delete">
+                            <IconButton edge="end" aria-label="delete" onClick={(event)=>{handleDelete(event)}} key={"Delete"}>
                                 <DeleteIcon/>
                             </IconButton>
                         ]}>
                             <ListItemText
                                 primary="Guilherme Pereira"
                                 secondary="Indicador, Volante, Som"
+                                key={"conteudo"}
                             />
                         </ListItem>
                         
