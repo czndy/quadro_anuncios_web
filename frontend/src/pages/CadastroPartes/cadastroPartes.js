@@ -8,6 +8,22 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default function CadastroPartes({menu}) {
+
+  const handleUpload = async (event) => {
+    let arquivo = await fetch(event.target.files)
+    .then((res)=>{
+      return res.blob()
+    })
+    .then((res)=>{
+      return res
+    })
+
+    console.log(URL.createObjectURL(arquivo, {type:"image/png"}));
+    console.log("arq",arquivo)
+  }
+
+
+
   return (
     <Box sx={{display: "flex", height: "100vh", width:"100%"}}>
       {menu}
@@ -35,7 +51,17 @@ export default function CadastroPartes({menu}) {
                 },}}
           >
             Upload Apostila com designações preenchidas
-            <input hidden accept=".pdf" multiple type="file" />
+            <input 
+            hidden 
+            accept="image/png" 
+            multiple 
+            type="file" 
+            onChange={
+              (event)=>{
+                handleUpload(event)
+              }
+              } 
+            />
           </Button>
       </Box>
     </Box>
