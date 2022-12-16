@@ -15,7 +15,6 @@ import React from "react";
 import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
 import CommentTwoToneIcon from "@mui/icons-material/CommentTwoTone";
 import DescriptionTwoToneIcon from "@mui/icons-material/DescriptionTwoTone";
-import NoteAddTwoToneIcon from "@mui/icons-material/NoteAddTwoTone";
 import PersonAddTwoToneIcon from "@mui/icons-material/PersonAddTwoTone";
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 
@@ -146,27 +145,11 @@ export default function Menu({name, content}) {
                 <ListItemText primary={"Cadastro"} />
               </ListItemButton>
             </ListItem>
-
-            <ListItem
-              key={"aee"}
-              disablePadding
-              onClick={() => {
-                navigate("/cadastro-partes");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <NoteAddTwoToneIcon style={{color: "#5b3c88"}} />
-                </ListItemIcon>
-                <ListItemText primary={"Cadastro Partes"} />
-              </ListItemButton>
-            </ListItem>
           </List>
         </Box>
       </Drawer>
 
       {content}
-
     </>
   );
 }

@@ -2,7 +2,6 @@ import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import Cadastro from "./pages/Cadastro/cadastro";
-import CadastroPartes from "./pages/CadastroPartes/cadastroPartes";
 import Dashboard from "./pages/Dashboard/dashboard";
 import DashText from "./pages/Dashboard/dashText";
 import Discursos from "./pages/Discursos/discursos";
@@ -19,7 +18,11 @@ export default function Router() {
         <Route path="/" element={<Login />} />
         <Route
           path="/dashboard"
-          element={<Dashboard menu={<Menu name="Dashboard" content={<DashText/>} />} />}
+          element={
+            <Dashboard
+              menu={<Menu name="Dashboard" content={<DashText />} />}
+            />
+          }
         />
         <Route
           path="/mecanicas"
@@ -37,10 +40,7 @@ export default function Router() {
           path="/partes"
           element={<Partes menu={<Menu name="Partes" />} />}
         />
-        <Route
-          path="/cadastro-partes"
-          element={<CadastroPartes menu={<Menu name="Cadastro Partes" />} />}
-        />
+
         <Route path="/teste" element={<Teste />} />
       </Routes>
     </BrowserRouter>
