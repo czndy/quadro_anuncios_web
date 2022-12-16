@@ -9,18 +9,19 @@ import Col from 'react-bootstrap/Col';
 
 export default function CadastroPartes({menu}) {
 
+  const [link, setLink] = React.useState("");
+
   const handleUpload = async (event) => {
     let arquivo = await fetch(event.target.files)
     .then((res)=>{
       return res.blob()
     })
-    .then((res)=>{
-      return res
-    })
+
+    console.log("arq",arquivo)
 
     console.log(URL.createObjectURL(arquivo, {type:"image/png"}));
-    console.log("arq",arquivo)
   }
+
 
 
 
@@ -53,7 +54,7 @@ export default function CadastroPartes({menu}) {
             Upload Apostila com designações preenchidas
             <input 
             hidden 
-            accept="image/png" 
+            accept="application/pdf" 
             multiple 
             type="file" 
             onChange={
