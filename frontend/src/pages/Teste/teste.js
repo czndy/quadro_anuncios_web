@@ -1,26 +1,35 @@
-import Dashboard from "../Dashboard/dashboard";
-import Menu from "../Menu/menu"
-import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import { Divider } from "@mui/material";
+import PDF from '../../assets/Teste.pdf'
+
 
 export default function Teste(){
+    const [numPages, setNumPages] = useState(null);
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+        setTimeout(() => {
+            //document.querySelectorAll("div.textLayer").forEach(element=>element.remove());
+            //document.querySelectorAll("div.annotationLayer").forEach(element=>element.remove());
+            console.log("delete")
+        }, 100);
+    }
+
     return(
-        <Box sx={{display: "flex", height: "100vh", width:"100%"}}>
-            <Menu/>
-            <Box
-                sx={{
-                "& > :not(style)": {
-                    m: "auto",
-                    width: 600,
-                    height: 600,
-                },
-                }}
-                m="auto"
-                display="flex"
-                alignItems="center"
-                width="1000px"
-                height="98vh"
-            >
-            </Box>
-        </Box>
+
+
+        <Document file={PDF} onLoadSuccess={onDocumentLoadSuccess}>
+
+        {Array.apply(null, Array(numPages))
+            .map((x, i)=>i+1)
+            .map((page) => {
+                return <><Page pageNumber={page} key={page}/><Divider sx={{width:"fit-content"}}/></>
+            })
+        }
+
+        </Document>
+
+                
     )
 }
