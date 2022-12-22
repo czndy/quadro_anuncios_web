@@ -156,7 +156,7 @@ export default function Cadastro({menu}) {
                 <Button variant="contained" color="success">
                   Adicionar
                 </Button>
-                <Button variant="contained" color="error">
+                <Button variant="contained" color="error" onClick={handleClose}>
                   Cancelar
                 </Button>
               </Box>
