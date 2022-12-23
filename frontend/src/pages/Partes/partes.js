@@ -1,4 +1,6 @@
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
 import * as React from "react";
 
 import DownloadTwoToneIcon from "@mui/icons-material/DownloadTwoTone";
@@ -14,15 +16,11 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 
 import {Divider} from "@mui/material";
+import {red} from "@mui/material/colors";
 import {useEffect, useState} from "react";
 import {Document, Page} from "react-pdf/dist/esm/entry.webpack";
 import PDF from "../../assets/Teste.pdf";
 import "./partes.css";
-
-const actions = [
-  {icon: <PublishTwoToneIcon />, name: "Upload"},
-  {icon: <DownloadTwoToneIcon />, name: "Download"},
-];
 
 export default function Partes({menu}) {
   const [link, setLink] = React.useState("");
@@ -33,9 +31,16 @@ export default function Partes({menu}) {
       return res.blob();
     });
 
+    setLink(arquivo);
+
     console.log("arq", arquivo);
 
     console.log(URL.createObjectURL(arquivo, {type: "image/png"}));
+  };
+
+  const handleDownload = (event) => {
+    console.log(link);
+    event.preventDefault();
   };
 
   function onDocumentLoadSuccess({numPages}) {
@@ -103,13 +108,55 @@ export default function Partes({menu}) {
           }}
           icon={<SpeedDialIcon />}
         >
-          {actions.map((action) => (
-            <SpeedDialAction
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-            />
-          ))}
+          <SpeedDialAction
+            key="Upload"
+            icon={
+              <>
+                <label
+                  for="file-input"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                >
+                  <PublishTwoToneIcon sx={{color: "#5b3c88"}} />
+                </label>
+                <input
+                  id="file-input"
+                  style={{display: "none"}}
+                  accept="application/pdf"
+                  multiple
+                  type="file"
+                  onChange={(event) => {
+                    handleUpload(event);
+                  }}
+                />
+              </>
+            }
+            tooltipTitle="Upload"
+          />
+          <SpeedDialAction
+            key="Download"
+            icon={
+              <a
+                href={link}
+                download
+                onClick={(event) => {
+                  handleDownload(event);
+                }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  color: "#5b3c88",
+                }}
+              >
+                <DownloadTwoToneIcon />
+              </a>
+            }
+            tooltipTitle="Download"
+          />
         </SpeedDial>
       </Box>
     </>

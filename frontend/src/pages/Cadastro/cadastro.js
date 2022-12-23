@@ -4,6 +4,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import {TextField} from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -141,11 +144,11 @@ export default function Cadastro({menu}) {
           <Typography id="modal-modal-description" sx={{mt: 2}}>
             <Box sx={{display: "flex", flexDirection: "column", gap: "20px"}}>
               <TextField id="outlined-basic" label="Nome" variant="outlined" />
-              <TextField
-                id="outlined-basic"
-                label="Funções"
-                variant="outlined"
-              />
+              <FormGroup>
+                <FormControlLabel control={<Checkbox />} label="Indicador" />
+                <FormControlLabel control={<Checkbox />} label="Volante" />
+                <FormControlLabel control={<Checkbox />} label="Som" />
+              </FormGroup>
               <Box
                 sx={{
                   display: "flex",
@@ -160,7 +163,6 @@ export default function Cadastro({menu}) {
                   Cancelar
                 </Button>
               </Box>
-              {/* adicionar checkbox com todas as funções para ficar mais simples */}
             </Box>
           </Typography>
         </Box>

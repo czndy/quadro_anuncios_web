@@ -1,7 +1,7 @@
 .MuiSpeedDial-fab {
-  background-color: #5b3c88;
+  background-color: #5b3c88 !important;
 }
 
 .MuiSpeedDial-fab:hover {
-  background-color: #5b2c88;
+  background-color: #5b2c88 !important;
 }
