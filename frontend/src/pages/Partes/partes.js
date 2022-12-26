@@ -23,7 +23,6 @@ import PDF from "../../assets/Teste.pdf";
 import "./partes.css";
 
 export default function Partes({menu}) {
-  const [link, setLink] = React.useState("");
   const [numPages, setNumPages] = useState(null);
 
   const handleUpload = async (event) => {
@@ -31,16 +30,13 @@ export default function Partes({menu}) {
       return res.blob();
     });
 
-    setLink(arquivo);
-
     console.log("arq", arquivo);
 
     console.log(URL.createObjectURL(arquivo, {type: "image/png"}));
   };
 
   const handleDownload = (event) => {
-    console.log(link);
-    event.preventDefault();
+    console.log(PDF);
   };
 
   function onDocumentLoadSuccess({numPages}) {
@@ -63,7 +59,7 @@ export default function Partes({menu}) {
         <Box
           sx={{
             "& > :not(style)": {
-              ml: "10%",
+              m: "auto",
               pt: "5%",
             },
           }}
@@ -140,8 +136,8 @@ export default function Partes({menu}) {
             key="Download"
             icon={
               <a
-                href={link}
-                download
+                href={PDF}
+                download="Partes"
                 onClick={(event) => {
                   handleDownload(event);
                 }}

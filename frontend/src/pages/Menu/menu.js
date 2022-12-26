@@ -1,8 +1,10 @@
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -23,6 +25,7 @@ import {useNavigate} from "react-router-dom";
 const drawerWidth = 240;
 
 export default function Menu({name, content}) {
+  const [leftBarOpen, setLeftBarOpen] = React.useState(true);
   let navigate = useNavigate();
 
   return (
@@ -36,6 +39,21 @@ export default function Menu({name, content}) {
         }}
       >
         <Toolbar>
+          {name !== "Dashboard" ? (
+            <IconButton
+              onClick={() => {
+                setLeftBarOpen(!leftBarOpen);
+              }}
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{mr: 2}}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            ""
+          )}
           <Typography
             variant="h6"
             noWrap
@@ -71,83 +89,90 @@ export default function Menu({name, content}) {
         </Toolbar>
       </AppBar>
 
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {width: drawerWidth, boxSizing: "border-box"},
-        }}
-      >
-        <Toolbar />
-        <Box sx={{overflow: "auto"}}>
-          <List>
-            <ListItem
-              key={"acc"}
-              disablePadding
-              onClick={() => {
-                navigate("/partes");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <DescriptionTwoToneIcon style={{color: "#5b3c88"}} />
-                </ListItemIcon>
-                <ListItemText primary={"Partes"} />
-              </ListItemButton>
-            </ListItem>
+      {leftBarOpen || name === "Dashboard" ? (
+        <Drawer
+          variant="permanent"
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+        >
+          <Toolbar />
+          <Box sx={{overflow: "auto"}}>
+            <List>
+              <ListItem
+                key={"acc"}
+                disablePadding
+                onClick={() => {
+                  navigate("/partes");
+                }}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DescriptionTwoToneIcon style={{color: "#5b3c88"}} />
+                  </ListItemIcon>
+                  <ListItemText primary={"Partes"} />
+                </ListItemButton>
+              </ListItem>
 
-            <ListItem
-              key={"abb"}
-              disablePadding
-              onClick={() => {
-                navigate("/mecanicas");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <SettingsTwoToneIcon style={{color: "#5b3c88"}} />
-                </ListItemIcon>
-                <ListItemText primary={"Mecânicas"} />
-              </ListItemButton>
-            </ListItem>
+              <ListItem
+                key={"abb"}
+                disablePadding
+                onClick={() => {
+                  navigate("/mecanicas");
+                }}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    <SettingsTwoToneIcon style={{color: "#5b3c88"}} />
+                  </ListItemIcon>
+                  <ListItemText primary={"Mecânicas"} />
+                </ListItemButton>
+              </ListItem>
 
-            <ListItem
-              key={"aaa"}
-              disablePadding
-              onClick={() => {
-                navigate("/discursos");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <CommentTwoToneIcon style={{color: "#5b3c88"}} />
-                </ListItemIcon>
-                <ListItemText primary={"Discursos"} />
-              </ListItemButton>
-            </ListItem>
-          </List>
+              <ListItem
+                key={"aaa"}
+                disablePadding
+                onClick={() => {
+                  navigate("/discursos");
+                }}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    <CommentTwoToneIcon style={{color: "#5b3c88"}} />
+                  </ListItemIcon>
+                  <ListItemText primary={"Discursos"} />
+                </ListItemButton>
+              </ListItem>
+            </List>
 
-          <Divider />
+            <Divider />
 
-          <List>
-            <ListItem
-              key={"add"}
-              disablePadding
-              onClick={() => {
-                navigate("/cadastro");
-              }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  <PersonAddTwoToneIcon style={{color: "#5b3c88"}} />
-                </ListItemIcon>
-                <ListItemText primary={"Cadastro"} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
+            <List>
+              <ListItem
+                key={"add"}
+                disablePadding
+                onClick={() => {
+                  navigate("/cadastro");
+                }}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PersonAddTwoToneIcon style={{color: "#5b3c88"}} />
+                  </ListItemIcon>
+                  <ListItemText primary={"Cadastro"} />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      ) : (
+        <></>
+      )}
 
       {content}
     </>

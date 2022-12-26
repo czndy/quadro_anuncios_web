@@ -24,7 +24,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 600,
   bgcolor: "background.paper",
-  borderRadius: "20px",
+  borderRadius: "10px",
   boxShadow: 24,
   p: 4,
 };
@@ -70,7 +70,7 @@ export default function Cadastro({menu}) {
           sx={{
             "& > :not(style)": {
               m: "auto",
-              width: 600,
+              width: "70em",
               height: 60 + totalIrmaos * 60 + "px", // 60 = 1 irmão, ..+60 px cada irmão
             },
           }}
@@ -117,7 +117,7 @@ export default function Cadastro({menu}) {
               ))}
             </List>
             <Button
-              style={{width: "31.25vw", height: "3rem"}}
+              style={{width: "100%", height: "3rem"}}
               sx={{
                 position: "absolute",
                 bottom: "0",
