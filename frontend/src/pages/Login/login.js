@@ -1,7 +1,9 @@
 import LoadingButton from "@mui/lab/LoadingButton";
+import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
@@ -10,6 +12,7 @@ import "./login.css";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   let navigate = useNavigate();
 
@@ -29,7 +32,7 @@ export default function Login() {
     if (whitelist[username.toLowerCase()] === password) {
       navigate("/dashboard");
     } else {
-      alert("Senha errada!");
+      setError(true);
     }
   };
 
@@ -45,10 +48,20 @@ export default function Login() {
       m="auto"
       display="flex"
       alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
       width="1000px"
       height="98vh"
     >
       <Paper elevation={3} style={{backgroundColor: "#e6e6e6"}}>
+        {error ? (
+          <Stack sx={{width: "100%"}} spacing={2}>
+            <Alert severity="error">Senha errada — tente novamente!</Alert>
+          </Stack>
+        ) : (
+          <></>
+        )}
+
         <Box
           m="auto"
           mt="90px"

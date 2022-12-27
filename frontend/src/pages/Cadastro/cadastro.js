@@ -40,11 +40,17 @@ export default function Cadastro({menu}) {
     {nome: "Guilherme", funcoes: "Indicador, Volante, Som"},
     {nome: "Bruno", funcoes: "Indicador, Volante, Som"},
     {nome: "Gabriel", funcoes: "Indicador, Volante, Som"},
+    {nome: "Guilherme", funcoes: "Indicador, Volante, Som"},
+    {nome: "Bruno", funcoes: "Indicador, Volante, Som"},
+    {nome: "Gabriel", funcoes: "Indicador, Volante, Som"},
+    {nome: "Guilherme", funcoes: "Indicador, Volante, Som"},
+    {nome: "Bruno", funcoes: "Indicador, Volante, Som"},
+    {nome: "Gabriel", funcoes: "Indicador, Volante, Som"},
   ];
 
   React.useEffect(() => {
     setTotalIrmaos(irmaos.length);
-  });
+  }, [irmaos.length]);
 
   const handleAddNew = (event) => {
     handleOpen();
@@ -82,7 +88,12 @@ export default function Cadastro({menu}) {
         >
           <Paper
             elevation={3}
-            style={{backgroundColor: "#f3f3f3", position: "relative"}}
+            style={{
+              backgroundColor: "#f3f3f3",
+              position: "relative",
+              maxHeight: "50%",
+              overflow: totalIrmaos > 7 ? "auto" : "hidden",
+            }}
           >
             <List dense={true}>
               {irmaos.map((irmao) => (
@@ -119,7 +130,7 @@ export default function Cadastro({menu}) {
             <Button
               style={{width: "100%", height: "3rem"}}
               sx={{
-                position: "absolute",
+                position: "sticky",
                 bottom: "0",
                 backgroundColor: "#e0e0e0",
                 color: "#5b3c88",
